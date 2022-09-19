@@ -236,6 +236,9 @@ body {
             }
           }
         }
+        &:hover {
+          scale: 0.98;
+        }
       }
       .cta-requestCallBack-text {
         margin: 0 10px;
@@ -251,6 +254,11 @@ body {
     flex: 1;
     margin: 40px 20px;
     min-width: fit-content;
+    .info-title {
+      i {
+        color: $primary-color;
+      }
+    }
     h1 {
       font-size: 30px;
     }

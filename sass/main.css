@@ -227,6 +227,9 @@ body section {
 .hero .hero-content .cta-container .cta-requestCallBack-btn .semi-circle .circle svg {
   color: #4c4b50;
 }
+.hero .hero-content .cta-container .cta-requestCallBack-btn:hover {
+  scale: 0.98;
+}
 .hero .hero-content .cta-container .cta-requestCallBack-text {
   margin: 0 10px;
   font-weight: bold;
@@ -240,6 +243,9 @@ body section {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+}
+.hero .hero-information-container .info-title i {
+  color: #f3835e;
 }
 .hero .hero-information-container h1 {
   font-size: 30px;
