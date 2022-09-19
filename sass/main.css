@@ -1,0 +1,419 @@
+html {
+  background-color: #f3835e;
+  padding: 4rem;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  margin: auto;
+  max-width: 900px;
+  padding: 0.5rem 7rem;
+}
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6 {
+  color: #182b33;
+}
+body p {
+  color: #7f818f;
+}
+body section {
+  margin: 3rem 0;
+}
+
+.desktop-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.desktop-navigation .user-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.desktop-navigation .user-info img {
+  width: 35px;
+  height: 35px;
+}
+.desktop-navigation .user-info .overlaping-circle {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.desktop-navigation .user-info .overlaping-circle .left-circle {
+  width: 31px;
+  height: 31px;
+  border: 4px solid #fcd7ce;
+  border-radius: 50%;
+  background-color: #fcd7ce;
+}
+.desktop-navigation .user-info .overlaping-circle .right-circle {
+  width: 31px;
+  height: 31px;
+  border: 4px solid #f3835e;
+  border-radius: 50%;
+  margin-left: -20px;
+  outline: 4px solid white;
+  overflow: hidden;
+}
+.desktop-navigation .user-info .overlaping-circle .right-circle .inner-circle {
+  background-color: #f3835e;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin: -2px 0 0 -18px;
+}
+.desktop-navigation .navigation-menu ul {
+  font-weight: 500;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  color: #7f818f;
+}
+.desktop-navigation .navigation-menu ul li {
+  display: inline-block;
+  position: relative;
+}
+.desktop-navigation .navigation-menu ul li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -8px;
+  left: 0;
+  background-color: #f3835e;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.desktop-navigation .navigation-menu ul li:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+.desktop-navigation .navigation-menu ul li:hover {
+  color: #182b33;
+}
+.desktop-navigation .notification i {
+  margin: 0 8px;
+}
+.desktop-navigation i {
+  color: #a5b6c6;
+}
+.desktop-navigation i:hover {
+  color: #f3835e;
+}
+.desktop-navigation .user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.desktop-navigation .user-profile .modes {
+  display: inline-flex;
+  box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #f6f7fb;
+  padding: 12px 10px;
+  gap: 1rem;
+}
+.desktop-navigation .user-profile .modes i {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.desktop-navigation .user-profile .modes i:nth-child(2) {
+  background-color: white;
+  border-radius: 10px;
+  width: 50px;
+  height: 35px;
+  color: #6756be;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.desktop-navigation .user-profile .user-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.desktop-navigation .user-profile .user-image-container img {
+  width: 45px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.hero .hero-content {
+  min-width: 350px;
+  flex: 2;
+}
+.hero .hero-content .hero-title {
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  margin-bottom: 10px;
+}
+.hero .hero-content .hero-description {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+.hero .hero-content .cta-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.hero .hero-content .cta-container .cta-discover-btn {
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 20px 45px;
+  border: none;
+  border-radius: 10px;
+}
+.hero .hero-content .cta-container .cta-discover-btn:hover {
+  scale: 0.98;
+}
+.hero .hero-content .cta-container .cta-requestCallBack-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hero .hero-content .cta-container .cta-requestCallBack-btn .semi-circle {
+  height: 50px;
+  width: 25px;
+  margin-right: 25px;
+  border-top-left-radius: 110px;
+  border-bottom-left-radius: 110px;
+  border: 6px solid #fa7601;
+  border-right: 0;
+  overflow: visible;
+  box-shadow: 10px 4px 16px 2px rgba(0, 0, 0, 0.2), 10px 6px 20px 2px rgba(0, 0, 0, 0.19);
+}
+.hero .hero-content .cta-container .cta-requestCallBack-btn .semi-circle .circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.hero .hero-content .cta-container .cta-requestCallBack-btn .semi-circle .circle svg {
+  color: #4c4b50;
+}
+.hero .hero-content .cta-container .cta-requestCallBack-text {
+  margin: 0 10px;
+  font-weight: bold;
+}
+.hero .hero-image {
+  flex: 2;
+}
+.hero .hero-information-container {
+  flex: 1;
+  margin: 40px 20px;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+.hero .hero-information-container h1 {
+  font-size: 30px;
+}
+.hero .hero-information-container .info-child-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 40px 0;
+}
+.hero .hero-information-container .info-child-container .content {
+  margin-left: 20px;
+  font-weight: 600;
+}
+.hero .hero-information-container .info-child-container .content h5 {
+  margin: 0;
+}
+.hero .hero-information-container .info-child-container .content p {
+  margin: 0;
+}
+.hero .hero-information-container .info-child-container .icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 10px;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-1 {
+  background-color: #eff9f9;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-1 i {
+  color: #379c86;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-2 {
+  background-color: #eff8fd;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-2 i {
+  color: #4188b5;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-3 {
+  background-color: #f7f5fa;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-3 i {
+  color: #935da5;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-4 {
+  background-color: #fef3e2;
+}
+.hero .hero-information-container .info-child-container .icon-container.icon-container-4 i {
+  color: #dd832b;
+}
+
+.travel-record-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.travel-record-data .participants-container .participants-avatars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.travel-record-data .participants-container .participants-avatars img {
+  width: 50px;
+  height: auto;
+  background-color: white;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-right: -20px;
+}
+.travel-record-data .participants-container .participants-avatars .plus-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: #010256;
+  border-radius: 50%;
+  border: 5px solid white;
+  padding: 10px;
+}
+.travel-record-data .participants-container .participants-avatars .plus-icon i {
+  color: white;
+}
+.travel-record-data .total-travel-data h1 {
+  font-size: 35px;
+  margin-bottom: 0;
+}
+.travel-record-data .traveled-progress-bar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 3px solid grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(closest-side, white 80%, transparent 0 99.9%, white 0), conic-gradient(#f3835e 28%, white 0);
+  color: #f3835e;
+}
+.travel-record-data .traveled-progress-bar .inner-circle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 50%;
+  height: 6.5rem;
+  width: 6.5rem;
+  background-color: white;
+  border: 3px solid grey;
+}
+.travel-record-data .traveled-progress-bar .inner-circle h3 {
+  margin: 0;
+}
+.travel-record-data .traveled-progress-bar .inner-circle p {
+  font-size: 0.7rem;
+  margin: 0;
+}
+
+.about-us {
+  margin-top: 7rem;
+}
+.about-us .traveler-point-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: normal;
+  background-color: #fdf6ee;
+  height: 200px;
+  padding: 30px 30px 0px 30px;
+  margin-top: 60px;
+}
+.about-us .traveler-point-container span {
+  font-size: 80px;
+  font-weight: 200;
+}
+.about-us .traveler-point-container .car-image-container {
+  background-color: #a6ccd9;
+  margin-top: -60px;
+  margin-left: 60px;
+}
+.about-us .traveler-point-container .car-image-container img {
+  margin-left: -60px;
+}
+.about-us .traveler-point-container .arrow-image-container {
+  width: 0;
+  overflow: visible;
+}
+.about-us .traveler-point-container .arrow-image-container img {
+  width: 150px;
+  position: relative;
+  rotate: deg(90);
+  transform: rotate(204deg);
+  left: -98px;
+  top: -90px;
+}
+.about-us .traveler-point-container .traveler-point-content {
+  margin-left: 5rem;
+  width: 40%;
+}
+.about-us .traveler-point-container .traveler-point-content .traveler-point-heading {
+  color: #2d00c3;
+  font-weight: 500;
+}
+.about-us .traveler-point-container .traveler-point-content .traveler-point-description {
+  font-size: 1.8rem;
+  color: #1e1e1d;
+  margin: 0;
+  font-weight: 500;
+}/*# sourceMappingURL=main.css.map */

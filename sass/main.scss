@@ -1,0 +1,469 @@
+//variables & mixins start
+$primary-color: #f3835e;
+$heading-color: #182b33;
+$paragraph-color: #7f818f;
+@mixin flex-box(
+  $flexDirection: row,
+  $justifycontent: center,
+  $alignItems: center
+) {
+  display: flex;
+  flex-direction: $flexDirection;
+  justify-content: $justifycontent;
+  align-items: $alignItems;
+}
+//variable & mixiins end
+
+html {
+  background-color: $primary-color;
+  padding: 4rem;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #ffffff;
+  min-width: fit-content;
+  margin: auto;
+  max-width: 900px;
+  padding: 0.5rem 7rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $heading-color;
+  }
+  p {
+    color: $paragraph-color;
+  }
+  section {
+    margin: 3rem 0;
+  }
+}
+
+.desktop-navigation {
+  //variable start
+  $navigation-icon-width: 35px;
+  $navigation-icon-height: $navigation-icon-width;
+  $navigation-icon-color: #a5b6c6;
+
+  //variable end
+  @include flex-box($justifycontent: space-between);
+
+  .user-info {
+    @include flex-box;
+    gap: 1rem;
+    img {
+      width: $navigation-icon-width;
+      height: $navigation-icon-height;
+    }
+    .overlaping-circle {
+      box-sizing: border-box;
+      $border-size: 4px;
+      @include flex-box;
+      .left-circle {
+        width: $navigation-icon-width -$border-size;
+        height: $navigation-icon-height -$border-size;
+        border: $border-size solid #fcd7ce;
+        border-radius: 50%;
+        background-color: #fcd7ce;
+      }
+      .right-circle {
+        width: $navigation-icon-width -$border-size;
+        height: $navigation-icon-height - $border-size;
+        border: $border-size solid $primary-color;
+        border-radius: 50%;
+        margin-left: -20px;
+        outline: 4px solid white;
+        overflow: hidden;
+        .inner-circle {
+          background-color: $primary-color;
+          width: $navigation-icon-width;
+          height: $navigation-icon-height;
+          border-radius: 50%;
+          margin: -2px 0 0 -18px;
+        }
+      }
+    }
+  }
+  .navigation-menu {
+    ul {
+      font-weight: 500;
+      list-style: none;
+      @include flex-box;
+      gap: 2rem;
+      color: $paragraph-color;
+
+      li {
+        // &:hover {
+        //   color: $heading-color;
+        //   text-decoration: underline;
+        // }
+
+        display: inline-block;
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          transform: scaleX(0);
+          height: 2px;
+          bottom: -8px;
+          left: 0;
+          background-color: $primary-color;
+          transform-origin: bottom right;
+          transition: transform 0.25s ease-out;
+        }
+
+        &:hover:after {
+          transform: scaleX(1);
+          transform-origin: bottom left;
+        }
+        &:hover {
+          color: $heading-color;
+        }
+      }
+    }
+  }
+  .notification {
+    i {
+      margin: 0 8px;
+    }
+  }
+  i {
+    color: $navigation-icon-color;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  .user-profile {
+    @include flex-box;
+
+    gap: 20px;
+    .modes {
+      display: inline-flex;
+      box-sizing: border-box;
+      border-radius: 20px;
+      background-color: #f6f7fb;
+      padding: 12px 10px;
+      gap: 1rem;
+
+      i {
+        @include flex-box;
+      }
+      i:nth-child(2) {
+        background-color: white;
+        border-radius: 10px;
+        width: 50px;
+        height: 35px;
+        color: #6756be;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+    }
+    .user-image-container {
+      @include flex-box;
+
+      gap: 0.5rem;
+      img {
+        width: $navigation-icon-width + 10px;
+      }
+    }
+  }
+}
+
+.hero {
+  @include flex-box($justifycontent: space-between);
+
+  .hero-content {
+    min-width: 350px;
+    flex: 2;
+    .hero-title {
+      font-weight: 700;
+      font-size: 3.5rem;
+      line-height: 4rem;
+      margin-bottom: 10px;
+    }
+    .hero-description {
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+
+    .cta-container {
+      @include flex-box;
+
+      gap: 20px;
+      .cta-discover-btn {
+        background-color: black;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 20px 45px;
+        border: none;
+        border-radius: 10px;
+
+        &:hover {
+          scale: 0.98;
+        }
+      }
+      .cta-requestCallBack-btn {
+        @include flex-box;
+
+        $circle-height: 50px;
+        $circle-width: $circle-height/2;
+        .semi-circle {
+          height: $circle-height;
+          width: $circle-width;
+          margin-right: 25px;
+          border-top-left-radius: 110px;
+          border-bottom-left-radius: 110px;
+          border: 6px solid #fa7601;
+          border-right: 0;
+          overflow: visible;
+          box-shadow: 10px 4px 16px 2px rgba(0, 0, 0, 0.2),
+            10px 6px 20px 2px rgba(0, 0, 0, 0.19);
+
+          .circle {
+            height: $circle-height;
+            width: $circle-width * 2;
+            border-radius: 50%;
+            background-color: #ffffff;
+            @include flex-box;
+
+            svg {
+              color: #4c4b50;
+            }
+          }
+        }
+      }
+      .cta-requestCallBack-text {
+        margin: 0 10px;
+        font-weight: bold;
+      }
+    }
+  }
+  .hero-image {
+    flex: 2;
+  }
+
+  .hero-information-container {
+    flex: 1;
+    margin: 40px 20px;
+    min-width: fit-content;
+    h1 {
+      font-size: 30px;
+    }
+    .info-child-container {
+      @include flex-box($justifycontent: flex-start);
+
+      margin: 40px 0;
+      .content {
+        margin-left: 20px;
+        font-weight: 600;
+        h5 {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+        }
+      }
+      .icon-container {
+        @include flex-box;
+
+        width: 55px;
+        height: 55px;
+        border: none;
+        border-radius: 10px;
+
+        &.icon-container-1 {
+          // background-color: #d0f2ec;
+          background-color: #eff9f9;
+          i {
+            color: #379c86;
+          }
+        }
+        &.icon-container-2 {
+          // background-color: #c9ecf2;
+          background-color: #eff8fd;
+          i {
+            color: #4188b5;
+          }
+        }
+        &.icon-container-3 {
+          // background-color: #f3e1f7;
+          background-color: #f7f5fa;
+          i {
+            color: #935da5;
+          }
+        }
+        &.icon-container-4 {
+          // background-color: #f7ecdc;
+          background-color: #fef3e2;
+          i {
+            color: #dd832b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.travel-record-data {
+  @include flex-box($justifycontent: space-around);
+
+  .participants-container {
+    .participants-avatars {
+      @include flex-box;
+      img {
+        width: 50px;
+        height: auto;
+        background-color: white;
+        border-radius: 50%;
+        border: 5px solid white;
+        margin-right: -20px;
+      }
+      .plus-icon {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        background-color: #010256;
+        border-radius: 50%;
+        border: 5px solid white;
+        padding: 10px;
+
+        i {
+          color: white;
+        }
+      }
+    }
+  }
+  .total-travel-data {
+    h1 {
+      font-size: 35px;
+      margin-bottom: 0;
+    }
+  }
+  // .traveled-progress-bar {
+  //   $circle-height: 106px;
+  //   $circle-width: $circle-height/2;
+  //   .outer-circle {
+  //     height: $circle-height;
+  //     width: $circle-width;
+  //     border-top-left-radius: 110px;
+  //     border-bottom-left-radius: 110px;
+  //     border: 8px solid #fa7601;
+
+  //     .inner-circle {
+  //       height: 100px;
+  //       width: $circle-width * 2;
+  //       border-radius: 50%;
+  //       border: 3px solid grey;
+  //       background-color: #ffffff;
+  //       @include flex-box($flexDirection: column, $justifycontent: flex-start);
+  //       h3 {
+  //         margin-bottom: 10px;
+  //       }
+  //       p {
+  //         font-size: 12px;
+  //         margin: 0;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .traveled-progress-bar {
+    //variables start
+    $size: 8rem;
+    $fg-color: $primary-color;
+    $bg-color: white;
+    $pg-percentage: 28%;
+    //variables end
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: 3px solid grey;
+    @include flex-box;
+    background: radial-gradient(
+        closest-side,
+        white 80%,
+        transparent 0 99.9%,
+        white 0
+      ),
+      conic-gradient($fg-color $pg-percentage, $bg-color 0);
+    color: $fg-color;
+    .inner-circle {
+      @include flex-box($flexDirection: column);
+      h3 {
+        margin: 0;
+      }
+      p {
+        font-size: 0.7rem;
+        margin: 0;
+      }
+      font-size: 20px;
+      border-radius: 50%;
+      height: 6.5rem;
+      width: 6.5rem;
+      background-color: white;
+      border: 3px solid grey;
+    }
+  }
+}
+
+.about-us {
+  margin-top: 7rem;
+  .traveler-point-container {
+    //variable start
+    $top-margin: 60px;
+    //variable end
+    @include flex-box($justifycontent: normal, $alignItems: normal);
+    background-color: #fdf6ee;
+    height: 200px;
+    padding: 30px 30px 0px 30px;
+    margin-top: $top-margin;
+    span {
+      font-size: 80px;
+      font-weight: 200;
+    }
+    .car-image-container {
+      //variable start
+      $left-margin: 60px;
+      //variable end
+      background-color: #a6ccd9;
+      margin-top: -$top-margin;
+      margin-left: $left-margin;
+      img {
+        margin-left: -$left-margin;
+      }
+    }
+    .arrow-image-container {
+      width: 0;
+      overflow: visible;
+      img {
+        width: 150px;
+        position: relative;
+        rotate: deg(90);
+        transform: rotate(204deg);
+        left: -98px;
+        top: -90px;
+      }
+    }
+    .traveler-point-content {
+      margin-left: 5rem;
+      width: 40%;
+      .traveler-point-heading {
+        color: #2d00c3;
+        font-weight: 500;
+      }
+      .traveler-point-description {
+        font-size: 1.8rem;
+        color: #1e1e1d;
+        margin: 0;
+        font-weight: 500;
+      }
+    }
+  }
+}
